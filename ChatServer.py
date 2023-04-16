@@ -1,0 +1,2 @@
+class ChatAppServicer(rpc.ChatAppServicer):
+    

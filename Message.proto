@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message Text {
+    string data = 1;
+    string sender = 2;
+}
+
+message Client {
+    string id = 1;
+    string name = 2;
+}
+
+message Empty {}
+
+service ChatApp {
+    rpc Wait () {}
+
+    rpc Connect(Client) returns (Empty) {}
+
+    rpc SendMessage(Client, Text) returns (Empty) {}
+
+    rpc ReceiveMessage(Text) returns (Empty) {} 
+
+    rpc CloseConnection(Client) returns (Empty) {}
+}
