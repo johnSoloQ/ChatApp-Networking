@@ -13,11 +13,9 @@ message Client {
 message Empty {}
 
 service ChatApp {
-    rpc Connect(Client) returns (Empty) {}
+    rpc Connect(Text) returns (stream Text) {}
 
     rpc SendMessage(Text) returns (Empty) {}
-
-    rpc ReceiveMessage(Text) returns (Empty) {} 
 
     rpc CloseConnection(Client) returns (Empty) {}
 }
